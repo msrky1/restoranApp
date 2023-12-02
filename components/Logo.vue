@@ -35,8 +35,8 @@
 
     </div>
     <nav :class="isOpen ? '' : 'hidden'" class="sm:flex sm:justify-center sm:items-center mt-4">
-  <div class=" flex-col sm:flex-row 
-  grid grid-rows-3 grid-flow-col gap-2">
+  <div class="grid  grid-flow-col gap-4   overflow-scroll
+  ">
     <div v-for="cat in category" :key="cat.id" class="w-28 h-24
     bg-amber-300
       md:mx-4 rounded-md
