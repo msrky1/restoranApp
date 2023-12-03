@@ -40,9 +40,9 @@
                         grid grid-cols-1 place-items-center 
                         ">
                             <div>
-                                <h3 class="text-gray-700 uppercase">Dondurma</h3>
+                                <h3 class="text-gray-700 uppercase font-black ">Dondurma</h3>
                             </div>
-                            <div> <span class="text-gray-500 mt-2">80.00₺</span></div>
+                            <div> <span class="text-gray-500 mt-2 font-bold">80.00₺</span></div>
 
 
                         </div>
@@ -57,9 +57,9 @@
                         grid grid-cols-1 place-items-center 
                         ">
                             <div>
-                                <h3 class="text-gray-700 uppercase">Künefe</h3>
+                                <h3 class="text-gray-700 uppercase font-black ">Çay</h3>
                             </div>
-                            <div> <span class="text-gray-500 mt-2">50₺</span></div>
+                            <div> <span class="text-gray-500 mt-2 font-bold">100.00₺</span></div>
 
 
                         </div>
@@ -74,9 +74,9 @@
                         grid grid-cols-1 place-items-center 
                         ">
                             <div>
-                                <h3 class="text-gray-700 uppercase">Künefe</h3>
+                                <h3 class="text-gray-700 uppercase font-black ">Pasta</h3>
                             </div>
-                            <div> <span class="text-gray-500 mt-2">50₺</span></div>
+                            <div> <span class="text-gray-500 mt-2 font-bold">400.00₺</span></div>
 
 
                         </div>
@@ -91,9 +91,9 @@
                         grid grid-cols-1 place-items-center 
                         ">
                             <div>
-                                <h3 class="text-gray-700 uppercase">Künefe</h3>
+                                <h3 class="text-gray-700 uppercase font-black ">Salep</h3>
                             </div>
-                            <div> <span class="text-gray-500 mt-2">50₺</span></div>
+                            <div> <span class="text-gray-500 mt-2 font-bold">50.00₺</span></div>
 
 
                         </div>
@@ -108,9 +108,9 @@
                         grid grid-cols-1 place-items-center 
                         ">
                             <div>
-                                <h3 class="text-gray-700 uppercase">Künefe</h3>
+                                <h3 class="text-gray-700 uppercase font-black ">Makarna</h3>
                             </div>
-                            <div> <span class="text-gray-500 mt-2">50₺</span></div>
+                            <div> <span class="text-gray-500 mt-2 font-bold">150.00₺</span></div>
 
 
                         </div>
