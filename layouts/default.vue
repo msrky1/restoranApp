@@ -6,7 +6,7 @@
 
 <slot/>
 
-<Footer/>
+<Footer class="bg-slate-900"/>
 
 
 
