@@ -1,6 +1,6 @@
 
 <template>
- <div class="bg-slate-900">
+ <div class="bg-black">
   <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
 
   <NuxtLayout :name="layout">

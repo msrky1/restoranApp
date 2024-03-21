@@ -24,7 +24,7 @@
         
 
     </div> -->
-    <header class="bg-slate-900">
+    <header class="bg-black">
         <div class="container mx-auto px-6 py-3">
            <Logo/>
           

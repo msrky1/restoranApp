@@ -49,15 +49,15 @@
         
   ">
   
-    <div v-for="cat in category" :key="cat.id" class="w-28 h-24
-    bg-amber-300
+    <div style="background-color: #BC945B;" v-for="cat in category" :key="cat.id" class="w-28 h-24
+    
       md:mx-4 rounded-md
         bg-cover
         bg-center md:mt-0 cursor-pointer
         hover:w-36 hover:h-28 duration-200 ease-in
         " 
 >
-      <div class="bg-gray-900 justify-center  bg-opacity-50 
+      <div class="justify-center  
         flex items-center h-full">
         <div >
           <span class="text-white">{{ cat }}</span>
