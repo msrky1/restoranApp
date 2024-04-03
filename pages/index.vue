@@ -134,10 +134,8 @@
 
 
 <script setup>
-//  import { api } from "@/composables/api.js";
+ 
 
-//  const { data } = useFetch(api + 'api/category');
 
-//  console.log(data);
 
 </script>
