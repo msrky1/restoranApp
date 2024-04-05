@@ -3,46 +3,26 @@ import { api } from '~/composables/api';
 
 
 
-const { data } = useFetch(api + 'api/menu');
-console.log(data);
+const { data } = useFetch(api + 'api/category');
+
 
 </script>
 
 <template>
-  <div class="grid  grid-flow-col gap-4 
-          flex-row-reverse space-x-4 space-x-reverse ... overflow-x-auto 
-        
-  ">
 
-    <div v-for="cat in data" :key="cat.id" style="background-color: #BC945B;" class="w-28 h-24
-    
-    md:mx-4 rounded-md
-      bg-cover  
-      bg-center md:mt-0 cursor-pointer
-      hover:w-36 hover:h-28 duration-200 ease-in
-      ">
-      <div class="justify-center  
-      flex items-center h-full">
-        <div>
-          <span class="text-white">{{ cat.name }}</span>
+  
+
+  <div class="w-[1200px] ">
+
+    <Swiper :slides-per-view="8" :space-between="10" @swiper="onSwiper" @slideChange="onSlideChange">
+    <SwiperSlide v-for="data in data" :key="data.id">
+        <div style="background-color: #BC945B; " class="h-28
+         w-36 rounded-lg items-center justify-center opacity-70
+         text-sm flex cursor-pointer text-white">
+            <div class="text-center "><h6>{{ data.name }}</h6></div> 
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="bg-red-900">
-
-    <Swiper :slides-per-view="8" :space-between="50" @swiper="onSwiper" @slideChange="onSlideChange">
-   
-      <SwiperSlide><div  style="background-color: #BC945B;" class=" h-32 w-32
-         rounded-lg items-center justify-center  text-lg flex
-         text-white">
-         <p>asdad</p>
-      </div></SwiperSlide>
-     
-
-
-    </swiper>
+    </SwiperSlide>
+</Swiper>
   </div>
 </template>
 

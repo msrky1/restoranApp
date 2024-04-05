@@ -38,31 +38,15 @@
   <nav :class="isOpen ? '' : 'hidden'" class="sm:flex 
     sm:justify-center sm:items-center mt-4
      
-       max-sm:overflow-auto 
+  
     
     ">
 
-    <div class="grid  grid-flow-col gap-4 
-          flex-row-reverse space-x-4 space-x-reverse ... overflow-x-auto 
-        
-  ">
 
-      <div v-for="cat in data" :key="cat.id" style="background-color: #BC945B;" class="w-28 h-24
-    
-      md:mx-4 rounded-md
-        bg-cover  
-        bg-center md:mt-0 cursor-pointer
-        hover:w-36 hover:h-28 duration-200 ease-in
-        ">
-        <div class="justify-center  
-        flex items-center h-full">
-          <div>
-            <span class="text-white">{{ cat.name }}</span>
-          </div>
-        </div>
-      </div>
+
+  <MenuCategory/>
          
-    </div>
+
   </nav>
 
 </template>
