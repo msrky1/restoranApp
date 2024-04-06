@@ -18,7 +18,7 @@
 
                 <div v-if="menus" class="justify-center items-center flex max-sm:hover:border-2 transition-all ease-in rounded-lg"
                     v-for="m in menus">
-                    <div class="text-white">
+                    <div class="text-white cursor-pointer">
 
                         <img class="w-[400px]" :src="api + 'storage/menu/' + m.image">
                         <div class="bg-[#BC945B] text-center ">

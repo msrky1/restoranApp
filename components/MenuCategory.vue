@@ -12,10 +12,10 @@ const { data } = useFetch(api + 'api/category');
 
 
 
-  <div class="w-[1200px] ">
+  <div class=" min-[450px]:hidden max-sm:w-[340px]">
 
 
-      <Swiper :slides-per-view="8" :space-between="8">
+      <Swiper :slides-per-view="4" :space-between="8">
         <SwiperSlide v-for="data in data" :key="data.id">
           <div class="h-28 bg-[#BC945B]
          w-36 rounded-lg items-center justify-center 
@@ -33,6 +33,27 @@ const { data } = useFetch(api + 'api/category');
  
 
   </div>
+  <div class=" max-sm:hidden">
+
+
+<Swiper :slides-per-view="8" :space-between="8">
+  <SwiperSlide v-for="data in data" :key="data.id">
+    <div class="h-28 bg-[#BC945B]
+   w-36 rounded-lg items-center justify-center 
+   text-sm flex cursor-pointer text-white">
+      <div class="text-center  rounded-lg">
+        {{ data.name }}
+
+      </div>
+
+
+    </div>
+  </SwiperSlide>
+</Swiper>
+
+
+
+</div>
 </template>
 
 <style>
