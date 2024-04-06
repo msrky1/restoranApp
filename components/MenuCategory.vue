@@ -1,4 +1,5 @@
 <script setup>
+
 import { api } from '~/composables/api';
 
 
@@ -15,45 +16,53 @@ const { data } = useFetch(api + 'api/category');
   <div class=" min-[450px]:hidden max-sm:w-[340px]">
 
 
-      <Swiper :slides-per-view="4" :space-between="8">
-        <SwiperSlide v-for="data in data" :key="data.id">
-          <div class="h-28 bg-[#BC945B]
+    <Swiper :slides-per-view="4" :space-between="8">
+      <SwiperSlide v-for="data in data" :key="data.id">
+        <div class="h-28 bg-[#BC945B]
          w-36 rounded-lg items-center justify-center 
          text-sm flex cursor-pointer text-white">
-            <div class="text-center  rounded-lg">
+          <div class="text-center  rounded-lg">
+          
+             <NuxtLink :to="'/category/' + data.id">
               {{ data.name }}
+             </NuxtLink>
+       
+   
 
-            </div>
-
+       
+        
 
           </div>
-        </SwiperSlide>
-      </Swiper>
 
- 
+
+        </div>
+      </SwiperSlide>
+    </Swiper>
+
+  
 
   </div>
   <div class=" max-sm:hidden">
 
 
-<Swiper :slides-per-view="8" :space-between="8">
-  <SwiperSlide v-for="data in data" :key="data.id">
-    <div class="h-28 bg-[#BC945B]
+    <Swiper :slides-per-view="8" :space-between="8">
+      <SwiperSlide v-for="data in data" :key="data.id">
+        <div class="h-28 bg-[#BC945B]
    w-36 rounded-lg items-center justify-center 
    text-sm flex cursor-pointer text-white">
-      <div class="text-center  rounded-lg">
-        {{ data.name }}
+          <div class="text-center  rounded-lg">
+            {{ data.name }}
 
-      </div>
-
-
-    </div>
-  </SwiperSlide>
-</Swiper>
+          </div>
 
 
+        </div>
+      </SwiperSlide>
+    </Swiper>
 
-</div>
+
+
+  </div>
 </template>
 
 <style>

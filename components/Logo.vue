@@ -13,7 +13,8 @@
       <span class="mx-1 text-sm text-white">Tatlı Park Menu</span>
     </div>
     <div>
-      <NuxtImg src="/logo.png" width="600px"> </NuxtImg>
+     <NuxtLink to="/"> <NuxtImg src="/logo.png" width="600px"> </NuxtImg>
+     </NuxtLink>
     </div>
     <div class="flex items-center justify-end w-full">
 
@@ -41,7 +42,7 @@
   
     
     ">
-
+ 
     <!-- <div > <h1 class="text-white text-2xl font-bold  ">Kategoriler</h1> </div> -->
  
 

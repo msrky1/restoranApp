@@ -10,13 +10,18 @@
             <div class="mt-12">
                 <div class=" py-2">
                     <h3 class="text-white text-2xl 
-                 font-medium">En Çok Görüntülenenler </h3>
+                 font-medium"> {{  category }} </h3>
                 </div>
             </div>
 
             <div class=" grid grid-cols-2  gap-1">
 
 
+                 <div class="bg-red-900">
+ 
+                     {{ }}
+
+                 </div>
               
                 
 
@@ -31,10 +36,17 @@
 
 </template>
 
-<script setup>
+<script setup lang="ts">
 
-const data = ref([]);
 
+
+const route = useRoute()
+
+const { data: category } = await useFetch(api + 'api/category/detail/' + route.params.id)
+
+
+console.log(category);
+ 
 
 
 </script>
