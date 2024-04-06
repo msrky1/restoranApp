@@ -17,7 +17,7 @@
     </div>
     <div class="flex items-center justify-end w-full">
 
-
+ 
       <div class="flex sm:hidden">
         <button v-if="!isOpen" @click="isOpen = !isOpen" type="button"
           class="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500" aria-label="toggle menu">
@@ -42,9 +42,9 @@
     
     ">
 
-
-
-  <MenuCategory/>
+    <div > <h1 class="text-white text-2xl font-bold  ">Kategoriler</h1> </div>
+ 
+  <!-- <MenuCategory/> -->
          
 
   </nav>
