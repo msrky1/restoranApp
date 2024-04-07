@@ -20,7 +20,7 @@
                     v-for="m in menus">
                     <div class="text-white cursor-pointer">
 
-                        <img class="w-[400px]" :src="api + 'storage/menu/' + m.image">
+                        <NuxtLink :to = "'/menu/detail/' + m.id">  <img class="w-[400px]" :src="api + 'storage/menu/' + m.image"></NuxtLink>
                         <div class="bg-[#BC945B] text-center ">
                             <h1 class="font-bold"> {{ m.title }}</h1>
                         </div>

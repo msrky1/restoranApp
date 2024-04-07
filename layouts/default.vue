@@ -4,7 +4,7 @@
 <Header/>
 
 
-<slot/>
+          <slot/>
 
 <Footer class="bg-slate-900"/>
 
