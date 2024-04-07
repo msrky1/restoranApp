@@ -3,13 +3,18 @@
 
    
     <Swiper :slides-per-view="1" :space-between="2">
+      <SwiperSlide>
+            <NuxtImg :src="api + 'storage/menu/' +
+              menu.image" lazy-load/>
+   
+           </SwiperSlide>
       <SwiperSlide v-for="data in images" :key="data.id">
         <div class=" ">
           <div class="text-center  rounded-lg">
           
             
-             <img :src="api + 'storage/images/tmp/' 
-             + data.path + '/' + data.image"/>
+             <NuxtImg :src="api + 'storage/images/tmp/' 
+             + data.path + '/' + data.image" lazy-load/>
    
            
               
@@ -20,6 +25,7 @@
 
         </div>
       </SwiperSlide>
+     
     </Swiper>
     <div class="text-center mt-2 text-white">
               
@@ -38,22 +44,21 @@
 definePageMeta({
   layout: 'custom'
 })
-
-
 const route = useRoute();
+
+
 let url = api + 'api/menu/detail/' + route.params.id;
 
-onMounted(() => {
 
-  console.log('deneme');
-   
-})
+
+
 const { data } = await useFetch(url)
+
 
 const menu = ref();
 const images = ref([]);
-
 menu.value = data.value.menu;
 images.value = data.value.menuImage;
+
 
 </script>
