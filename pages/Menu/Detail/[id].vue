@@ -1,9 +1,35 @@
 <template>
-  <div>
+  <div class="h-[600px]   bg-[#BC945B] mt-12 " >
 
-    asdasdad
+   
+    <Swiper :slides-per-view="1" :space-between="2">
+      <SwiperSlide v-for="data in images" :key="data.id">
+        <div class=" ">
+          <div class="text-center  rounded-lg">
+          
+            
+             <img :src="api + 'storage/images/tmp/' 
+             + data.path + '/' + data.image"/>
+   
+           
+              
+        
+
+          </div>
+
+
+        </div>
+      </SwiperSlide>
+    </Swiper>
+    <div class="text-center mt-2 text-white">
+              
+       <h1 class="font-bold text-2xl">{{ menu.title }}</h1>
+       <h2 class="font-bold text-2xl">{{ menu.price }}₺</h2>
+       <p >{{ menu.body }}</p>
+        
+    </div>
   </div>
-
+ 
 </template>
 
 
@@ -17,7 +43,11 @@ definePageMeta({
 const route = useRoute();
 let url = api + 'api/menu/detail/' + route.params.id;
 
+onMounted(() => {
 
+  console.log('deneme');
+   
+})
 const { data } = await useFetch(url)
 
 const menu = ref();

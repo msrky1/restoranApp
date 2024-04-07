@@ -1,11 +1,11 @@
 <template>
   <div class="bg-black">
 
-      <NuxtLayout :name="layout">
+    <NuxtLayout>
 
-        <NuxtPage />
+      <NuxtPage />
 
-      </NuxtLayout>
+    </NuxtLayout>
 
   </div>
   <!-- <div class=" justify-center items-center w-full h-full fixed  flex bg-black">
@@ -15,9 +15,9 @@
 </template>
 
 <script setup lang="ts">
-
-const layout = 'default'
-
+definePageMeta({
+  layout: 'default'
+})
 
 
 
