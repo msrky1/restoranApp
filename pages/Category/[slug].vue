@@ -1,11 +1,5 @@
+
 <template>
-    <div> Detay</div>
-</template>
-
-
-<!-- <template>
-
-
 
 <main class="my-8  bg-black ">
         <div class="container mx-auto px-6">
@@ -75,4 +69,4 @@ CategoryMenu.value = data.value.CategoryMenu;
 category.value = data.value.Category;
 
 
-</script> -->
+</script> 

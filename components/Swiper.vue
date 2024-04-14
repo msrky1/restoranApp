@@ -1,29 +1,33 @@
 <template>
   <div class="w-[1200px] max-sm:w-[350px]  cursor-pointer">
+
     <Carousel v-bind="settings" :breakpoints="breakpoints">
       <Slide v-for="slide in category" :key="slide">
         <div class="carousel__item ">
-          <div class="" > 
-            <NuxtImg class=" max-sm:w-[600px]" :src="api + 'storage/category/' + slide.image"/>
+          <div class="">
+            <NuxtLink :to="'/category/' + slide.id">
+              <NuxtImg class=" max-sm:w-[600px]" :src="api + 'storage/category/' + slide.image" />
+            </NuxtLink>
             <div class="z-90">
-      {{ slide.name }}   
-         </div>
+              {{ slide.name }}
+            </div>
           </div>
-        
 
-        
+
+
         </div>
       </Slide>
       <template class="bg-white" #addons>
         <Navigation />
       </template>
     </Carousel>
+
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import Axios from 'axios'; 
+import Axios from 'axios';
 // import 'vue3-carousel/dist/carousel.css';
 
 export default defineComponent({
@@ -37,6 +41,10 @@ export default defineComponent({
         snapAlign: 'center',
       },
       breakpoints: {
+        300: {
+          itemsToShow: 2,
+          snapAlign: 'center',
+        },
         400: {
           itemsToShow: 2,
           snapAlign: 'center',
@@ -90,5 +98,17 @@ export default defineComponent({
   border-radius: 25%;
   background-color: wheat;
   border: 5px solid white;
+}
+
+.router-link-active {
+
+
+  border: 2;
+  border-color: green;
+}
+
+.router-link-exact-active {
+  border: 2;
+  border-color: green;
 }
 </style>
