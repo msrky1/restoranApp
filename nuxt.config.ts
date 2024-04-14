@@ -1,18 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    
-    'nuxt-icon',
-    '@nuxt/image',
- 
-  
-
-
-
-],
+  modules: ['nuxt-icon', '@nuxt/image', 'vue3-carousel-nuxt'],
 
   css: ['~/assets/css/main.css'],
+  // carousel: {
+  //   prefix: 'MyPrefix'
+  // },
   postcss: {
     plugins: {
       tailwindcss: {},

@@ -47,9 +47,12 @@
  
      <MenuCategory/>
 
-     <!-- <Swiper/> -->
 
 
+
+  <Swiper/>
+ 
+       
   
     
 
