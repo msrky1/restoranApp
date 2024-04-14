@@ -5,9 +5,13 @@ export default defineNuxtConfig({
     
     'nuxt-icon',
     '@nuxt/image',
-    'nuxt-swiper'
+ 
+  
+
+
 
 ],
+
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {

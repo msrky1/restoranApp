@@ -1,3 +1,6 @@
+
+
+
 <template>
 
     <main class="my-8  bg-black ">
@@ -64,4 +67,4 @@ const data = onMounted(() => {
     });
 
 })
-</script>
+</script> 

@@ -1,4 +1,9 @@
 <template>
+    <div> Detay</div>
+</template>
+
+
+<!-- <template>
 
 
 
@@ -70,4 +75,4 @@ CategoryMenu.value = data.value.CategoryMenu;
 category.value = data.value.Category;
 
 
-</script>
+</script> -->

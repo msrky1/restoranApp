@@ -43,11 +43,15 @@
     
     ">
  
-    <!-- <div > <h1 class="text-white text-2xl font-bold  ">Kategoriler</h1> </div> -->
+  
  
+     <MenuCategory/>
 
-      <MenuCategory/>
+     <!-- <Swiper/> -->
 
+
+  
+    
 
          
 

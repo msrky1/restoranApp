@@ -1,14 +1,16 @@
 <template>
-    <slot />
 
-    <div class="">
+    <div class="bg-black w-full h-full">
 
 
-        <h1 class="text-white text-center">
+        <div class="flex justify-center items-center h-[400px] bg-red-900">
+            <h1 class="text-white text-center">
 
-            Tatlı Park Dondurma</h1>
-    
+                Tatlı Park Dondurma</h1>
+        </div>
 
-        <Footer/>
+
+        <slot />
+        <Footer />
     </div>
 </template>
