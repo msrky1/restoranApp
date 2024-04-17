@@ -1,6 +1,7 @@
 <template>
   <div class="w-full   cursor-pointer bg-black">
-
+ 
+    
     <Carousel v-bind="settings" :breakpoints="breakpoints">
       <Slide v-for="slide in category" :key="slide">
         <div class="carousel__item ">
@@ -56,7 +57,9 @@ export default defineComponent({
       settings: {
         itemsToShow: 4,
         snapAlign: 'center',
+        autoplay: 2000,
       },
+    
       breakpoints: {
         300: {
           itemsToShow: 1,
