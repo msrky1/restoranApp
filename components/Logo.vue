@@ -45,17 +45,13 @@
 
 
         <div class="flex sm:hidden">
-          <button v-if="!isOpen" @click="isOpen = !isOpen" type="button"
+          <div class=" font-serif absolute right-4">
+            <span>0</span>
+          </div>
+          <button  type="button"
             class="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500" aria-label="toggle menu">
-            <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
-              <path fill-rule="evenodd"
-                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
-              </path>
-            </svg>
-
-          </button>
-          <NuxtImg v-else @click="isOpen = !isOpen" width="30"
-            class="hover:w-10 ease-in duration-300 hover:rotate-[360deg]" src="/icon/close.svg"></NuxtImg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="black" d="m17.75 21.16l-2.75-3L16.16 17l1.59 1.59L21.34 15l1.16 1.41zM10 21h2.8c.24.41.53.79.85 1.13c-.36.53-.96.87-1.65.87a2 2 0 0 1-2-2m-7-1v-1l2-2v-6a7 7 0 0 1 5-6.71V4a2 2 0 1 1 4 0v.29A7 7 0 0 1 19 11v1.08L18 12l-1 .08V11c0-2.76-2.24-5-5-5s-5 2.24-5 5v7h5c0 .7.12 1.37.34 2z"/></svg>          </button>
+         
         </div>
       </div>
 
