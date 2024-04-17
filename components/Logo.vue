@@ -25,7 +25,7 @@
     <input v-model="searchText" type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Menüde Arayın.." required />
     <Transition name="fade"  >
       <div v-if="searchText" class="bg-white absolute mt-2 z-40 w-[200px]  rounded-lg">
-        <div class="ml-2  overflow-x-auto scroll-m-0 ">
+        <div class=" overflow-x-auto scroll-m-0 ">
           <div class="flex border-2 justify-center text-center" v-for="menu in filteredMenu" :key="menu.id"> 
             <div class="text-center mt-3">{{ menu.title }}</div>
             <div>

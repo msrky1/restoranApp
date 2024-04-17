@@ -2,7 +2,7 @@
   <div class="w-full   cursor-pointer bg-black">
  
 
-    <Carousel v-bind="settings" :breakpoints="breakpoints">
+    <Carousel class=" min-[1000px]:hidden" v-bind="settings" :breakpoints="breakpoints">
       <Slide v-for="slide in category" :key="slide">
         <div class="carousel__item ">
           <div>
@@ -109,7 +109,10 @@ export default defineComponent({
   align-items: center;
 }
 
-.carousel__slide {}
+.carousel__slide {
+
+
+}
 
 .carousel__prev,
 .carousel__next {
