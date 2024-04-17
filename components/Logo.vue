@@ -63,12 +63,7 @@
 
   </div>
 
-  <nav :class="isOpen ? '' : 'hidden'" class="sm:flex 
-    sm:justify-center sm:items-center mt-4
-     
-  
-    
-    ">
+ 
 
 
 
@@ -85,7 +80,7 @@
 
 
 
-  </nav>
+  
 
 
 </template>
