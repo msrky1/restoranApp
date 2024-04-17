@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center ">
+  <div class="flex items-center justify-center  bg-white">
     <div class="hidden w-full text-white md:flex md:items-center">
       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -12,26 +12,53 @@
       </svg>
       <span class="mx-1 text-sm text-white">Tatlı Park Menu</span>
     </div>
-    <div>
-     <NuxtLink to="/"> <NuxtImg src="/logo.png" width="600px"> </NuxtImg>
-     </NuxtLink>
-    </div>
-    <div class="flex items-center justify-end w-full">
+    <div class="flex justify-start items-center ">
 
- 
-      <div class="flex sm:hidden">
-        <button v-if="!isOpen" @click="isOpen = !isOpen" type="button"
-          class="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500" aria-label="toggle menu">
-          <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
-            <path fill-rule="evenodd"
-              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
-            </path>
-          </svg>
 
-        </button>
-        <NuxtImg v-else @click="isOpen = !isOpen" width="30"
-          class="hover:w-10 ease-in duration-300 hover:rotate-[360deg]" src="/icon/close.svg"></NuxtImg>
+      <div>
+        <NuxtLink to="/">
+          <NuxtImg src="/logo.png" width="400px"> </NuxtImg>
+        </NuxtLink>
       </div>
+     
+      <div class="ml-14">
+    <input v-model="searchText" type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Menüde Arayın.." required />
+    <Transition name="fade"  >
+      <div v-if="searchText" class="bg-white absolute mt-2 z-40 w-[200px]  rounded-lg">
+        <div class="ml-2  overflow-x-auto scroll-m-0 ">
+          <div class="flex border-2 justify-center text-center" v-for="menu in filteredMenu" :key="menu.id"> 
+            <div class="text-center mt-3">{{ menu.title }}</div>
+            <div>
+            <NuxtLink :to = "'/menu/detail/' + menu.id"> 
+               <img class="w-[100px]" :src="api + 'storage/menu/' + menu.image">
+              </NuxtLink>
+
+          </div>
+          </div>
+         
+        </div>
+      </div>
+    </Transition>
+  </div>
+
+      <div class="flex items-center justify-end w-full">
+
+
+        <div class="flex sm:hidden">
+          <button v-if="!isOpen" @click="isOpen = !isOpen" type="button"
+            class="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500" aria-label="toggle menu">
+            <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+              <path fill-rule="evenodd"
+                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+              </path>
+            </svg>
+
+          </button>
+          <NuxtImg v-else @click="isOpen = !isOpen" width="30"
+            class="hover:w-10 ease-in duration-300 hover:rotate-[360deg]" src="/icon/close.svg"></NuxtImg>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -42,23 +69,24 @@
   
     
     ">
- 
-  
- 
-     <MenuCategory/>
+
+
+
+    <MenuCategory />
 
 
 
 
-  <Swiper/>
- 
-       
-  
-    
 
-         
+
+
+
+
+
+
 
   </nav>
+
 
 </template>
 
@@ -70,20 +98,38 @@ import { api } from '~/composables/api';
 
 
 const isOpen = ref(true)
+const searchText = ref('');
+
 
 
 const { data } = useFetch(api + 'api/category');
+const { data: menu } = useFetch(api + 'api/menu');
+
+// Arama metni
 
 
+// Filtreleme işlemi
+const filteredMenu = computed(() => {
 
-const category = ([
+  const searchLowerCase = searchText.value.toLowerCase().trim();
 
 
-  "Künefeler", "Kırmızı Etler", "Makarnalar", "Salatalar", "Kahvaltı",
-  "Künefeler", "Kırmızı Etler", "Makarnalar", "Salatalar", "Kahvaltı"
+  return menu.value.filter(item => {
 
-])
+    const itemNameLowerCase = item.title.toLowerCase();
+    return itemNameLowerCase.includes(searchLowerCase);
+  });
+});
 
-console.log(category)
+
 
 </script>
+
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+</style>

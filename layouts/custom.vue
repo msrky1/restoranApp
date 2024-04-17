@@ -1,16 +1,19 @@
 <template>
 
-    <div class="bg-black w-full h-full">
+    <div class="bg-black  h-screen flex justify-center items-center">
 
 
-        <div class="flex justify-center items-center h-[400px] bg-red-900">
-            <h1 class="text-white text-center">
+ 
 
-                Tatlı Park Dondurma</h1>
-        </div>
+                <slot />
 
 
-        <slot />
-        <Footer />
+
+      
+                <div class="fixed w-full justify-center items-center flex  bottom-0">
+
+                 <h1 class="text-white"> Tatlı Park </h1>  
+                </div>
+ 
     </div>
 </template>

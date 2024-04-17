@@ -1,6 +1,3 @@
-
-
-
 <template>
 
     <main class="my-8  bg-black ">
@@ -11,24 +8,29 @@
             <div class="mt-12">
                 <div class=" py-2">
                     <h3 class="text-white text-2xl 
-                 font-medium">En Çok Görüntülenenler </h3>
+                 font-medium">Kategoriler </h3>
                 </div>
             </div>
 
-            <div class=" grid grid-cols-2  gap-1">
+            <div class=" grid grid-cols-2  gap-1 ">
 
 
 
-                <div v-if="menus" class="justify-center items-center flex max-sm:hover:border-2 transition-all ease-in rounded-lg"
-                    v-for="m in menus">
-                    <div class="text-white cursor-pointer">
+                <div v-if="category" class="justify-center items-center  rounded-lg" v-for="m in category">
+                    <div class="text-white cursor-pointer border-4 border-[#BC945B] ">
 
-                        <NuxtLink :to = "'/menu/detail/' + m.id">  <img class="w-[400px]" :src="api + 'storage/menu/' + m.image"></NuxtLink>
-                        <div class="bg-[#BC945B] text-center ">
-                            <h1 class="font-bold"> {{ m.title }}</h1>
-                        </div>
-                        <div class="bg-[#BC945B] text-center ">
+                        <NuxtLink :to="'/category/' + m.id"> <img class="w-[400px]"
+                                :src="api + 'storage/category/' + m.image"></NuxtLink>
+               
+
+                        <!-- <div class="bg-[#BC945B] text-center ">
                             <h2 class="font-bold">{{ m.price }}₺</h2>
+                        </div> -->
+                        <div class="">
+                            <div class="bg-[#BC945B] text-center text-lg ">
+                                <h1 class=" font-bold"> {{ m.name }}</h1>
+                            </div>
+
                         </div>
                     </div>
 
@@ -36,7 +38,7 @@
 
 
                 </div>
-                 <div v-else> Henüz Yok </div>
+                <div v-else> Henüz Yok </div>
 
             </div>
 
@@ -54,17 +56,23 @@
 import axios from 'axios';
 
 
-const menus = ref([]);
+// const menus = ref([]);
+const category = ref([]);
 
 
 const data = onMounted(() => {
 
 
-    axios.get(api + 'api/menu').then((response) => {
+    // axios.get(api + 'api/menu').then((response) => {
 
-        menus.value = response.data;
+    //     menus.value = response.data;
+
+    // });
+
+    axios.get(api + 'api/category').then((response) => {
+
+        category.value = response.data;
 
     });
-
 })
-</script> 
+</script>

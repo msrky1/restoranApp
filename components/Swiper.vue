@@ -1,24 +1,41 @@
 <template>
-  <div class="w-[1200px] max-sm:w-[350px]  cursor-pointer">
+  <div class="w-full   cursor-pointer bg-black">
 
     <Carousel v-bind="settings" :breakpoints="breakpoints">
       <Slide v-for="slide in category" :key="slide">
         <div class="carousel__item ">
-          <div class="">
-            <NuxtLink :to="'/category/' + slide.id">
-              <NuxtImg class=" max-sm:w-[600px]" :src="api + 'storage/category/' + slide.image" />
-            </NuxtLink>
-            <div class="z-90">
-              {{ slide.name }}
-            </div>
+          <div>
+            <!-- <h6 class="text-xs">{{ slide.name }}</h6> -->
+
+            <NuxtImg class="w-[1200px] h-[200px]" :src="api + 'storage/vitrin/' + slide.image" />
+
+
           </div>
 
+          <div class="absolute left-4   w-32 grid grid-cols-1 ">
+          <div>
+
+       
+            <h2 class="text-lg">{{ slide.title }} 
+            </h2>
+          </div>
+            <div>
+              <button
+                class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                <span
+                  class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                  Detaylar
+                </span>
+              </button>
+
+            </div>
+          </div>
 
 
         </div>
       </Slide>
       <template class="bg-white" #addons>
-        <Navigation />
+        <Pagination />
       </template>
     </Carousel>
 
@@ -42,11 +59,11 @@ export default defineComponent({
       },
       breakpoints: {
         300: {
-          itemsToShow: 2,
+          itemsToShow: 1,
           snapAlign: 'center',
         },
         400: {
-          itemsToShow: 2,
+          itemsToShow: 1,
           snapAlign: 'center',
         },
         700: {
@@ -54,7 +71,7 @@ export default defineComponent({
           snapAlign: 'center',
         },
         1024: {
-          itemsToShow: 5,
+          itemsToShow: 1,
           snapAlign: 'start',
         },
       },
@@ -63,7 +80,7 @@ export default defineComponent({
 
   // Mounted hook'u içinde API isteği yapın
   mounted() {
-    Axios.get(api + 'api/category')
+    Axios.get(api + 'api/vitrin')
       .then(response => {
         // API'den gelen verileri kategoriye atayın
         this.category = response.data;
@@ -88,9 +105,7 @@ export default defineComponent({
   align-items: center;
 }
 
-.carousel__slide {
-  padding: 10px;
-}
+.carousel__slide {}
 
 .carousel__prev,
 .carousel__next {
