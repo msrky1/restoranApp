@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center  bg-white">
+  <div class="flex items-center justify-center  bg-white min-[1024px]:hidden">
     <div class="hidden w-full text-white md:flex md:items-center">
       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
