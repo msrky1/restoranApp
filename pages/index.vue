@@ -1,6 +1,6 @@
 <template>
 
-    <main class="my-8  max-lg:hidden  bg-black min-[1024px]:hidden">
+    <main class="my-8    bg-black min-[1024px]:hidden">
         <div class="container mx-auto px-6">
 
 
