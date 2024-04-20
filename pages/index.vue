@@ -16,8 +16,8 @@
 
 
 
-                <div v-if="category" class="justify-center items-center  rounded-lg" v-for="m in category">
-                    <div class="text-white cursor-pointer border-4 border-[#BC945B] ">
+                <div v-if="category" class="justify-center items-center " v-for="m in category">
+                    <div class="text-white cursor-pointer border-4 rounded-b-lg border-[#BC945B] ">
 
                         <NuxtLink :to="'/category/' + m.id"> <img class="w-[400px]"
                                 :src="api + 'storage/category/' + m.image"></NuxtLink>
