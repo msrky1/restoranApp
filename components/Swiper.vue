@@ -1,6 +1,6 @@
 <template>
   <div class="w-full   cursor-pointer bg-black">
- 
+
 
     <Carousel class=" min-[1000px]:hidden" v-bind="settings" :breakpoints="breakpoints">
       <Slide v-for="slide in category" :key="slide">
@@ -14,31 +14,33 @@
           </div>
 
           <div class="absolute left-4   w-32 grid grid-cols-1 ">
-          <div>
-
-       
-            <h2 class="text-lg">{{ slide.title }} 
-            </h2>
-          </div>
             <div>
-            <NuxtLink :to ="'/Category/' + slide.link ">
-               <button
-                class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span
-                  class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                  Detaylar
-                </span>
-              </button>
-            </NuxtLink> 
+
+
+              <h2 class="text-lg">{{ slide.title }}
+              </h2>
             </div>
+            <div>
+              <NuxtLink :to="'/Category/' + slide.link">
+                <button
+                  class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                  <span
+                    class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    Detaylar
+                  </span>
+                </button>
+              </NuxtLink>
+            </div>
+
           </div>
 
 
         </div>
       </Slide>
-      <template class="bg-white" #addons>
-        <Pagination />
-      </template>
+      <template #addons>
+  
+      <!-- <Pagination class="bg-[#BC945B]" /> -->
+    </template>
     </Carousel>
 
   </div>
@@ -59,8 +61,10 @@ export default defineComponent({
         itemsToShow: 4,
         snapAlign: 'center',
         autoplay: 2000,
+        transition: 2000,
+        pauseAutoplayOnHover: true,
       },
-    
+
       breakpoints: {
         300: {
           itemsToShow: 1,
@@ -110,15 +114,12 @@ export default defineComponent({
 }
 
 .carousel__slide {
-
-
+  padding: 10px;
 }
 
 .carousel__prev,
 .carousel__next {
   box-sizing: content-box;
-  border-radius: 25%;
-  background-color: wheat;
   border: 5px solid white;
 }
 

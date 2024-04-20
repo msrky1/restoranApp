@@ -27,7 +27,10 @@
                             <h2 class="font-bold">{{ m.price }}₺</h2>
                         </div> -->
                         <div class="">
-                            <div class="bg-[#BC945B] text-center text-lg ">
+                            <div class="bg-[#BC945B] text-center text-lg  
+                            shadow-2xl
+                            
+                            ">
                                 <h1 class=" font-bold"> {{ m.name }}</h1>
                             </div>
 
