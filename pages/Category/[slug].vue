@@ -43,7 +43,7 @@
 
             </div>
 
-            <div class="fixed cursor-pointer bottom-12 border-2 border-green-500 rounded-full bg-black right-4  z-90">
+            <div class="fixed cursor-pointer bottom-12 border-2 border-[#BC945B] rounded-full bg-black right-4  z-90">
                 <div @click="backPage()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em"
                         viewBox="0 0 24 24">
