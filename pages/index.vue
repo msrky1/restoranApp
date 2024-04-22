@@ -15,7 +15,7 @@
 
 
                 <div v-for="k in 20" class=" shadow h-40 justify-center items-center">
-                    <div class="animate-pulse flex space-x-4 text-white cursor-pointer border-2 rounded-b-lg border-[#BC945B]">
+                    <div class="animate-pulse flex space-x-4 text-white cursor-pointer border-2 rounded-b-lg ">
                        
                         <div class="flex-1 h-40 space-y-6 py-1">
                             <div class=" h-24 bg-slate-700 rounded "></div>
@@ -40,7 +40,7 @@
 
 
                 <div class="justify-center items-center" v-for="m in category">
-                    <div class="text-white cursor-pointer border-4 rounded-b-lg border-[#BC945B] ">
+                    <div class="text-white cursor-pointer  rounded-b-lg  ">
 
                         <NuxtLink :to="'/category/' + m.id"> <img class="w-[400px]"
                                 :src="api + 'storage/category/' + m.image"></NuxtLink>
@@ -50,11 +50,11 @@
                             <h2 class="font-bold">{{ m.price }}₺</h2>
                         </div> -->
                         <div class="">
-                            <div class="bg-[#BC945B] text-center text-lg  
+                            <div class=" text-center text-lg  
                             shadow-2xl
                             
                             ">
-                                <h1 class=" font-bold"> {{ m.name }}</h1>
+                                <h1 class=" font-bold  text-[#BC945B] "> {{ m.name }}</h1>
                             </div>
 
                         </div>
