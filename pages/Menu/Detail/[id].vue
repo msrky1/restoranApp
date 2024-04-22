@@ -1,8 +1,8 @@
 <template>
 
-  <div class=" h-screen top-0 ">
-    <div>
-      <NuxtImg width="250" class=" mt-12 " :src="api +
+  <div class=" h-screen ">
+    <div  class="justify-center flex items-center mt-12">
+      <NuxtImg width="250" class="  " :src="api +
         'storage/menu/' + menu.image" />
 
     </div>

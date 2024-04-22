@@ -66,8 +66,8 @@ export default defineComponent({
       settings: {
         itemsToShow: 4,
         snapAlign: 'center',
-        autoplay: 2000,
-        transition: 2000,
+        autoplay: 1000,
+        transition: 1000,
         pauseAutoplayOnHover: true,
         wrapAround:true,
       },
