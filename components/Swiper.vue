@@ -21,7 +21,7 @@
               </h2> -->
           
           
-                  <p>{{ slide.title }}</p>
+                  <p class="font-black">{{ slide.title }}</p>
      
 
             </div>

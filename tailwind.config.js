@@ -10,7 +10,13 @@ module.exports = {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+
+      backgroundImage: {
+        'hero-pattern': "url('/public/arkaplan.jpg')",
+     
+      }
+    },
   },
   plugins: [
 

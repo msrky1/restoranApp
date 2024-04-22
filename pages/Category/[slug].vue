@@ -1,6 +1,6 @@
 <template>
 
-    <main class="my-8  bg-black ">
+    <main class="my-8   bg-[url('/genis.jpg')]  bg-center  bg-contain ">
         <div class="container mx-auto px-6">
 
 
@@ -8,7 +8,7 @@
             <div class="mt-12">
                 <div class=" py-2">
                     <h3 v-for="category in category" class="text-white text-2xl 
-                 font-medium">
+                 font-black">
 
                         {{ category.name }}
 
@@ -26,10 +26,10 @@
 
                         <NuxtLink :to="'/menu/detail/' + m.id"> <img class="w-[400px]"
                                 :src="api + 'storage/menu/' + m.image"></NuxtLink>
-                        <div class="bg-[#BC945B] text-center ">
+                        <div class=" text-[#BC945B] text-center ">
                             <h1 class="font-bold"> {{ m.title }}</h1>
                         </div>
-                        <div class="bg-[#BC945B] text-center ">
+                        <div class=" text-center text-[#BC945B] ">
                             <h2 class="font-bold">{{ m.price }}₺</h2>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
 
             </div>
 
-            <div class="fixed cursor-pointer bottom-12 border-2 border-[#BC945B] rounded-full bg-black right-4  z-90">
+            <div class="fixed cursor-pointer bottom-12 rounded-full  right-4  z-90">
                 <div @click="backPage()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em"
                         viewBox="0 0 24 24">

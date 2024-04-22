@@ -1,6 +1,6 @@
 <template>
 
-    <main class="my-8    bg-black min-[1024px]:hidden">
+    <main class="my-8   min-[1024px]:hidden bg-[url('/genis.jpg')]  bg-center  bg-contain">
         <div class="container mx-auto px-6">
 
 
@@ -8,7 +8,7 @@
             <div class="mt-12">
                 <div class=" py-2">
                     <h3 class="text-white text-2xl 
-                 font-medium">Kategoriler </h3>
+                 font-black">Kategoriler </h3>
                 </div>
             </div>
             <div v-if="pending" class=" grid grid-cols-2  gap-4  ">
