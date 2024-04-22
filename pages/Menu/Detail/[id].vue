@@ -2,7 +2,7 @@
 
   <div class=" h-screen top-0 ">
     <div>
-      <NuxtImg class="w-full mt-14" :src="api +
+      <NuxtImg width="250" class=" mt-12 " :src="api +
         'storage/menu/' + menu.image" />
 
     </div>
