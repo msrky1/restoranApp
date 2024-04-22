@@ -27,7 +27,7 @@
       <div v-if="searchText" class="bg-white absolute mt-2 z-40 w-[200px]  rounded-lg">
         <div class=" overflow-x-auto scroll-m-0 ">
           <div class="flex border-2 justify-center text-center" v-for="menu in filteredMenu" :key="menu.id"> 
-            <div class="text-center mt-3">{{ menu.title }}</div>
+            <div class="text-center mt-12">{{ menu.title }}</div>
             <div>
             <NuxtLink :to = "'/menu/detail/' + menu.id"> 
                <img class="w-[100px]" :src="api + 'storage/menu/' + menu.image">

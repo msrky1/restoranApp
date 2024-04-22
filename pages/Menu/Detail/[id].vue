@@ -1,8 +1,8 @@
 <template>
 
-  <div class=" h-screen top-0 bg-white">
+  <div class=" h-screen top-0 ">
     <div>
-      <NuxtImg class="w-full" :src="api +
+      <NuxtImg class="w-full mt-14" :src="api +
         'storage/menu/' + menu.image" />
 
     </div>

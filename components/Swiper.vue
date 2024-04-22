@@ -69,6 +69,7 @@ export default defineComponent({
         autoplay: 2000,
         transition: 2000,
         pauseAutoplayOnHover: true,
+        wrapAround:true,
       },
 
       breakpoints: {
