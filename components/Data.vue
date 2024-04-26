@@ -6,7 +6,7 @@
             
             </NuxtLink>
          
-        <NuxtLink :to="'/category/' + category.id">   <div class="text-center"> {{ category.name }}</div>
+        <NuxtLink :to="'/category/' + category.id">   <div class="text-center font-bold  text-[#BC945B]"> {{ category.name }}</div>
           </NuxtLink>
 
     </div>
