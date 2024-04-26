@@ -37,18 +37,16 @@
             </div>
             <div v-else class=" grid grid-cols-2  gap-1 ">
 
+                <Data v-for="(cat, key) in category" :key="key" :category="cat" />
 
-
-                <div class="justify-center items-center" v-for="m in category">
+                <!-- <div class="justify-center items-center" v-for="m in category">
                     <div class="text-white cursor-pointer  rounded-b-lg  ">
 
                         <NuxtLink :to="'/category/' + m.id"> <img class="w-[400px]"
                                 :src="api + 'storage/category/' + m.image"></NuxtLink>
 
 
-                        <!-- <div class="bg-[#BC945B] text-center ">
-                            <h2 class="font-bold">{{ m.price }}₺</h2>
-                        </div> -->
+                     
                         <div class="">
                             <div class=" text-center text-lg  
                             shadow-2xl
@@ -63,7 +61,7 @@
 
 
 
-                </div>
+                </div> -->
 
 
             </div>
@@ -90,7 +88,7 @@ const { pending, data: category } = useFetch(api + 'api/category', {
     lazy: true
 })
 
-console.log('data:' + category);
+
 
 // const data = onMounted(() => {
 
@@ -108,3 +106,7 @@ console.log('data:' + category);
 //     });
 // })
 </script>
+
+<style scoped>
+
+</style>
