@@ -1,7 +1,7 @@
 <template>
  
   <div class=" h-screen ">
-    <div  class="justify-center flex items-center mt-12">
+    <div  class="justify-center flex items-center mt-24">
       <NuxtImg width="250" class="  " :src="api +
         'storage/menu/' + menu.image" />
 

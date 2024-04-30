@@ -20,26 +20,43 @@
           <NuxtImg src="/logo.png" width="400px"> </NuxtImg>
         </NuxtLink>
       </div>
-     
-      <div class="ml-14">
-    <input v-model="searchText" type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Menüde Arayın.." required />
-    <Transition name="fade"  >
-      <div v-if="searchText" class="bg-white absolute mt-2 z-40 w-[200px]  rounded-lg">
-        <div class=" overflow-x-auto scroll-m-0 ">
-          <div class="flex border-2 justify-center text-center" v-for="menu in filteredMenu" :key="menu.id"> 
-            <div class="text-center mt-12">{{ menu.title }}</div>
-            <div>
-            <NuxtLink :to = "'/menu/detail/' + menu.id"> 
-               <img class="w-[100px]" :src="api + 'storage/menu/' + menu.image">
-              </NuxtLink>
 
-          </div>
-          </div>
-         
+      <div class="ml-14">
+        <div>
+          <div v-if="searchText" @click="filteredMenu" class=" cursor-pointer absolute ml-[150px] mt-1  "><svg xmlns="http://www.w3.org/2000/svg" width="4em" height="2em"
+              viewBox="0 0 24 24">
+              <g fill="none" stroke="white" stroke-linecap="round" stroke-width="2">
+                <path stroke-dasharray="16" stroke-dashoffset="16" d="M10.5 13.5L3 21">
+                  <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.4s" dur="0.2s" values="16;0" />
+                </path>
+                <path stroke-dasharray="40" stroke-dashoffset="40"
+                  d="M10.7574 13.2426C8.41421 10.8995 8.41421 7.10051 10.7574 4.75736C13.1005 2.41421 16.8995 2.41421 19.2426 4.75736C21.5858 7.10051 21.5858 10.8995 19.2426 13.2426C16.8995 15.5858 13.1005 15.5858 10.7574 13.2426Z">
+                  <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="40;0" />
+                </path>
+              </g>
+            </svg></div>
+
+          <input v-model="searchText" type="text" id="first_name"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Menüde Arayın.." required />
+          <Transition name="fade">
+            <div v-if="searchText" class="bg-white absolute mt-2 z-40 w-[200px]  rounded-lg">
+              <div class=" overflow-x-auto scroll-m-0 ">
+                <div class="flex border-2 justify-center text-center" v-for="menu in filteredMenu" :key="menu.id">
+                  <div class="text-center flex  items-center ">{{ menu.title }}</div>
+                  <div>
+                    <NuxtLink :to="'/menu/detail/' + menu.id">
+                      <img class="w-[100px]" :src="api + 'storage/menu/' + menu.image">
+                    </NuxtLink>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </Transition>
         </div>
       </div>
-    </Transition>
-  </div>
 
       <div class="flex items-center justify-end w-full">
 
@@ -48,10 +65,13 @@
           <div class=" font-serif absolute right-4">
             <span>0</span>
           </div>
-          <button  type="button"
-            class="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500" aria-label="toggle menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="black" d="m17.75 21.16l-2.75-3L16.16 17l1.59 1.59L21.34 15l1.16 1.41zM10 21h2.8c.24.41.53.79.85 1.13c-.36.53-.96.87-1.65.87a2 2 0 0 1-2-2m-7-1v-1l2-2v-6a7 7 0 0 1 5-6.71V4a2 2 0 1 1 4 0v.29A7 7 0 0 1 19 11v1.08L18 12l-1 .08V11c0-2.76-2.24-5-5-5s-5 2.24-5 5v7h5c0 .7.12 1.37.34 2z"/></svg>          </button>
-         
+          <button type="button" class="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500"
+            aria-label="toggle menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
+              <path fill="black"
+                d="m17.75 21.16l-2.75-3L16.16 17l1.59 1.59L21.34 15l1.16 1.41zM10 21h2.8c.24.41.53.79.85 1.13c-.36.53-.96.87-1.65.87a2 2 0 0 1-2-2m-7-1v-1l2-2v-6a7 7 0 0 1 5-6.71V4a2 2 0 1 1 4 0v.29A7 7 0 0 1 19 11v1.08L18 12l-1 .08V11c0-2.76-2.24-5-5-5s-5 2.24-5 5v7h5c0 .7.12 1.37.34 2z" />
+            </svg> </button>
+
         </div>
       </div>
 
@@ -59,15 +79,11 @@
 
   </div>
 
- 
-
-
-
-    <MenuCategory />
 
 
 
 
+  <MenuCategory />
 
 
 
@@ -76,7 +92,11 @@
 
 
 
-  
+
+
+
+
+
 
 
 </template>
@@ -117,10 +137,13 @@ const filteredMenu = computed(() => {
 </script>
 
 <style>
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to {
+
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 </style>
