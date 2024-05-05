@@ -8,7 +8,7 @@
 
         <div class="flex sm:hidden">
             <div class=" font-serif absolute right-4">
-                <span class="text-black font-sans">{{ store.say }}</span>
+                <span class="text-black font-sans">{{  store.testCon() }}</span>
             </div>
             <button @click="addToast()" type="button"
                 class="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500"
@@ -69,7 +69,5 @@ function addToast() {
     
 }
 
-
-
-
+ 
 </script>

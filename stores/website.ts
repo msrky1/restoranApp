@@ -4,8 +4,8 @@ export const useWebsiteStore = defineStore('websiteStore', {
   state: () => ({
     data: [],
     settings: [],
-    say: '',
-   
+    lengthData: '',
+    itemCon: '',
   }),
   actions: {
     
@@ -13,8 +13,8 @@ export const useWebsiteStore = defineStore('websiteStore', {
       const infos = await $fetch(api + 'api/notification')
 
       this.data = infos;
-      this.say =  this.data.length;
-      localStorage.setItem("data" , this.say);
+      
+      localStorage.setItem("data" , this.data.length);
      
     }, 
     async setting() {
@@ -30,13 +30,23 @@ export const useWebsiteStore = defineStore('websiteStore', {
 
     deleteItem() {
 
-      setTimeout(() => {
+     
         localStorage.removeItem("data");
-    }, 3000);
-  
-     this.say = 0;
+        localStorage.setItem("con" , "con");
      
 
+      
+
+    },
+    testCon(){
+      if(localStorage.getItem("con")){
+ 
+        return 0;
+       
+       }else {
+       
+       return localStorage.getItem("data");
+       }
     }
   //   noti() {
  
