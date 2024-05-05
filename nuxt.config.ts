@@ -1,7 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ['nuxt-icon', '@nuxt/image', 'vue3-carousel-nuxt'],
+  modules: [
+    'nuxt-icon',
+    '@nuxt/image',
+    'vue3-carousel-nuxt',
+    'nuxt3-notifications',
+    '@pinia/nuxt',
+    "@nuxt/ui"
+  ],
   experimental: {
     defaults: {
       nuxtLink: {
@@ -15,7 +22,8 @@ export default defineNuxtConfig({
       }
     }
   },
- 
+
+
 
   css: ['~/assets/css/main.css'],
   // carousel: {

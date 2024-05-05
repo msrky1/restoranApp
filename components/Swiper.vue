@@ -50,15 +50,19 @@
     </Carousel>
 
   </div>
+ 
 </template>
-
+ 
 <script>
+
+
 import { defineComponent } from 'vue';
 import Axios from 'axios';
 // import 'vue3-carousel/dist/carousel.css';
 
 export default defineComponent({
   name: 'Breakpoints',
+
 
   data() {
     return {

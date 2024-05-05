@@ -15,9 +15,9 @@
     <div class="flex justify-start items-center ">
 
 
-      <div>
+      <div v-for="set in store.settings">
         <NuxtLink to="/">
-          <NuxtImg src="/logo.png" width="400px"> </NuxtImg>
+          <NuxtImg :src="api + 'storage/setting/' + set.image" width="200px"> </NuxtImg>
         </NuxtLink>
       </div>
 
@@ -36,14 +36,18 @@
               </g>
             </svg></div>
 
-          <input v-model="searchText" type="text" id="first_name"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          <input v-model="searchText" type="text" 
+            class="bg-gray-50 border border-gray-300
+             text-gray-900 text-sm rounded-lg focus:ring-blue-500
+              focus:border-blue-500 block w-[200px] p-2.5 dark:bg-gray-700
+               dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Menüde Arayın.." required />
           <Transition name="fade">
             <div v-if="searchText" class="bg-white absolute mt-2 z-40 w-[200px]  rounded-lg">
               <div class=" overflow-x-auto scroll-m-0 ">
                 <div class="flex border-2 justify-center text-center" v-for="menu in filteredMenu" :key="menu.id">
-                  <div class="text-center flex  items-center ">{{ menu.title }}</div>
+                  <div class="text-center flex  items-center  text-black">{{ menu.title }}</div>
                   <div>
                     <NuxtLink :to="'/menu/detail/' + menu.id">
                       <img class="w-[100px]" :src="api + 'storage/menu/' + menu.image">
@@ -58,44 +62,14 @@
         </div>
       </div>
 
-      <div class="flex items-center justify-end w-full">
-
-
-        <div class="flex sm:hidden">
-          <div class=" font-serif absolute right-4">
-            <span>0</span>
-          </div>
-          <button type="button" class="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500"
-            aria-label="toggle menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
-              <path fill="black"
-                d="m17.75 21.16l-2.75-3L16.16 17l1.59 1.59L21.34 15l1.16 1.41zM10 21h2.8c.24.41.53.79.85 1.13c-.36.53-.96.87-1.65.87a2 2 0 0 1-2-2m-7-1v-1l2-2v-6a7 7 0 0 1 5-6.71V4a2 2 0 1 1 4 0v.29A7 7 0 0 1 19 11v1.08L18 12l-1 .08V11c0-2.76-2.24-5-5-5s-5 2.24-5 5v7h5c0 .7.12 1.37.34 2z" />
-            </svg> </button>
-
-        </div>
-      </div>
+         <Notification/>
 
     </div>
 
   </div>
-
-
-
-
+  
 
   <MenuCategory />
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -103,10 +77,13 @@
 
 <script setup>
 import { api } from '~/composables/api';
+import { useWebsiteStore } from "/stores/website"
 
 
+const store = useWebsiteStore();
 
 
+store.setting();
 
 const isOpen = ref(true)
 const searchText = ref('');

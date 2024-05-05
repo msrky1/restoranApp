@@ -40,7 +40,7 @@
     </div> -->
 
 
-  <div class="bg-[#BC945B] w-full rounded-lg fixed h-2/4 bottom-0">
+  <div class="bg-[#BC945B]  w-screen rounded-lg fixed h-2/4 bottom-0">
     <div class="fixed bottom-0 right-4  z-90">
       <div @click="backPage()">
         <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em"  class="hover:w-24 transition-all ease-in duration-100"
