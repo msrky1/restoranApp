@@ -4,8 +4,7 @@ export const useWebsiteStore = defineStore('websiteStore', {
   state: () => ({
     data: [],
     settings: [],
-    lengthData: '',
-    itemCon: '',
+ 
   }),
   actions: {
     
@@ -14,7 +13,7 @@ export const useWebsiteStore = defineStore('websiteStore', {
 
       this.data = infos;
       
-      localStorage.setItem("data" , this.data.length);
+
      
     }, 
     async setting() {
@@ -28,26 +27,7 @@ export const useWebsiteStore = defineStore('websiteStore', {
       return this.data.length;
     },
 
-    deleteItem() {
-
-     
-        localStorage.removeItem("data");
-        localStorage.setItem("con" , "con");
-     
-
-      
-
-    },
-    testCon(){
-      if(localStorage.getItem("con")){
- 
-        return 0;
-       
-       }else {
-       
-       return localStorage.getItem("data");
-       }
-    }
+   
   //   noti() {
  
   //      console.log('test');
