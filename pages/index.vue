@@ -16,21 +16,21 @@
 
                 <div v-for="k in 20" class=" shadow h-40 justify-center items-center">
                     <div class="animate-pulse flex space-x-4 text-white cursor-pointer border-2 rounded-b-lg ">
-                       
+
                         <div class="flex-1 h-40 space-y-6 py-1">
                             <div class=" h-24 bg-slate-700 rounded "></div>
                             <div class="space-y-3">
                                 <div class="grid grid-cols-3 gap-4  bg-center">
                                     <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                                   
+
                                 </div>
-                             
+
                             </div>
                         </div>
                     </div>
                     <!-- {{ k }} -->
                 </div>
-           
+
 
 
 
@@ -63,7 +63,22 @@
 
                 </div> -->
 
+                
+                <div v-for="ice in data" class=" mb-10 text-white overflow-hidden" ref="isShowPhoto">
+                    <NuxtLink :to="'/Icecream/' + ice.id">
+                        <img :src="`${api}storage/icecream/kapak/${ice.kapak}`">
 
+                    
+
+                    </NuxtLink>
+
+                    <!-- <NuxtLink :to="'/category/'">
+                        <div class="text-center font-bold  text-[#BC945B]"> {{ category.name }}</div>
+                    </NuxtLink> -->
+
+
+
+                </div>
             </div>
 
 
@@ -88,6 +103,7 @@ const { pending, data: category } = useFetch(api + 'api/category', {
     lazy: true
 })
 
+const { data } = await useFetch(api + 'api/icecream');
 
 
 // const data = onMounted(() => {
@@ -107,6 +123,4 @@ const { pending, data: category } = useFetch(api + 'api/category', {
 // })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -50,10 +50,13 @@
                   <div class="text-center flex  items-center  text-black">{{ menu.title }}</div>
                   <div>
                     <NuxtLink :to="'/menu/detail/' + menu.id">
-                      <img class="w-[100px]" :src="api + 'storage/menu/' + menu.image">
+                      <NuxtImg class="w-[100px]"
+                      sizes="100vw sm:50vw md:400px"
+
+                      :src="api + 'storage/menu/' + menu.image" lazyLoad />
                     </NuxtLink>
 
-                  </div>
+                  </div> 
                 </div>
 
               </div>

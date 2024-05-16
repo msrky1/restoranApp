@@ -3,11 +3,13 @@
     <div class=" mb-10 text-white overflow-hidden" ref="isShowPhoto">
         <NuxtLink :to="'/category/' + category.id">  
               <img :data-src="`${api}storage/category/${category.image}`" :alt="category.name">
-            
+        
             </NuxtLink>
          
         <NuxtLink :to="'/category/' + category.id">   <div class="text-center font-bold  text-[#BC945B]"> {{ category.name }}</div>
           </NuxtLink>
+
+   
 
     </div>
     

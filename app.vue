@@ -14,7 +14,7 @@
     <NuxtLoadingIndicator color="#BC945B" />
 
     <NuxtLayout>
-
+      
      
         <NuxtPage />
     
