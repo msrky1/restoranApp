@@ -64,27 +64,25 @@
                 </div> -->
 
                 
-                <div v-for="ice in data" class=" mb-10 text-white overflow-hidden" ref="isShowPhoto">
-                    <NuxtLink :to="'/Icecream/' + ice.id">
-                        <img :src="`${api}storage/icecream/kapak/${ice.kapak}`">
-
-                    
-
-                    </NuxtLink>
-
-                    <!-- <NuxtLink :to="'/category/'">
-                        <div class="text-center font-bold  text-[#BC945B]"> {{ category.name }}</div>
-                    </NuxtLink> -->
-
-
-
-                </div>
+               
             </div>
 
 
         </div>
 
+        <div v-for="ice in data" class=" mb-10 text-white overflow-hidden w-full" ref="isShowPhoto">
+                    <NuxtLink :to="'/Icecream/' + ice.id">
+                        <NuxtImg :src="`${api}storage/icecream/kapak/${ice.kapak}`"/>
 
+                    
+
+                    </NuxtLink>
+
+                 
+
+
+
+                </div>
 
     </main>
 </template>
