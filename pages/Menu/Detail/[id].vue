@@ -55,7 +55,7 @@
     <div class="text-black text-center mt-2">
 
       <h1 class="text-2xl font-bold text-white"> {{ menu.title }}</h1>
-      <p class=" text-white">{{ menu.body }}</p>
+      <p class=" text-white" v-html="menu.body"></p>
       <h1 class="text-2xl   font-bold text-white"> {{ menu.price }}₺</h1>
     </div>
 
