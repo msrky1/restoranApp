@@ -22,7 +22,11 @@ export default defineNuxtConfig({
       }
     }
   },
-
+  image: {
+    
+    quality: 30,
+   
+  },
 
 
   css: ['~/assets/css/main.css'],

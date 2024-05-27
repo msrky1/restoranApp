@@ -24,8 +24,9 @@
                     v-for="m in CategoryMenu">
                     <div class="text-white cursor-pointer">
 
-                        <NuxtLink :to="'/menu/detail/' + m.id"> <img class="w-[400px]"
-                                :src="api + 'storage/menu/' + m.image"></NuxtLink>
+                        <NuxtLink :to="'/menu/detail/' + m.id"> <NuxtImg   sizes="100vw sm:20vw md:400px"
+
+                                :src="api + 'storage/menu/' + m.image"/></NuxtLink>
                         <div class=" text-[#BC945B] text-center ">
                             <h1 class="font-bold"> {{ m.title }}</h1>
                         </div>

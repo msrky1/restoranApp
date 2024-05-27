@@ -1,7 +1,7 @@
 <template>
- 
+
   <div class=" h-screen ">
-    <div  class="justify-center flex items-center mt-24">
+    <div class="justify-center flex items-center mt-24">
       <NuxtImg width="250" class="  " :src="api +
         'storage/menu/' + menu.image" />
 
@@ -43,20 +43,31 @@
   <div class="bg-[#BC945B]  w-screen rounded-lg fixed h-2/4 bottom-0">
     <div class="fixed bottom-0 right-4  z-90">
       <div @click="backPage()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em"  class="hover:w-24 transition-all ease-in duration-100"
-        viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-         stroke-width="2"><path stroke-dasharray="14" stroke-dashoffset="14" d="M19 12H5.5"><animate fill="freeze"
-           attributeName="stroke-dashoffset" dur="0.3s" values="14;0"/></path><path stroke-dasharray="8"
-            stroke-dashoffset="8" d="M5 12L10 17M5 12L10 7"><animate fill="freeze" 
-          attributeName="stroke-dashoffset" begin="0.3s" dur="0.2s" values="8;0"/></path></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em"
+          class="hover:w-24 transition-all ease-in duration-100" viewBox="0 0 24 24">
+          <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path stroke-dasharray="14" stroke-dashoffset="14" d="M19 12H5.5">
+              <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="14;0" />
+            </path>
+            <path stroke-dasharray="8" stroke-dashoffset="8" d="M5 12L10 17M5 12L10 7">
+              <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.3s" dur="0.2s" values="8;0" />
+            </path>
+          </g>
+        </svg>
       </div>
 
     </div>
     <div class="text-black text-center mt-2">
 
       <h1 class="text-2xl font-bold text-white"> {{ menu.title }}</h1>
-      <p class=" text-white" v-html="menu.body"></p>
+     
+     
+      <div class="text-white quill-content">
+        <p  v-html="menu.body"></p>
+      </div>
+      
       <h1 class="text-2xl   font-bold text-white"> {{ menu.price }}₺</h1>
+     
     </div>
 
   </div>
@@ -119,3 +130,14 @@ const backPage = (() => {
 
 
 </script>
+
+<style>
+
+.quill-content {
+  /* Quill Editor tarafından kullanılan CSS sınıflarını uygula */
+  .ql-align-center {
+    text-align: center;
+  }
+  /* Diğer stil sınıflarını gerektiği gibi ekleyin */
+}
+</style>
