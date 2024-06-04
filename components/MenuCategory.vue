@@ -14,5 +14,5 @@
 
 let url = api + 'api/category'
 const { data } = useFetch(url);
-console.log(data);
+
 </script>

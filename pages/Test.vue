@@ -30,7 +30,7 @@ axios.get(`${api}api/category`)
         console.log(e)
     });
 
-console.log(categories)
+
 
 onMounted(() => {
     const observer = new IntersectionObserver(
