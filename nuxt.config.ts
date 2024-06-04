@@ -7,8 +7,12 @@ export default defineNuxtConfig({
     'vue3-carousel-nuxt',
     'nuxt3-notifications',
     '@pinia/nuxt',
-    "@nuxt/ui"
+    "@nuxt/ui",
+    
+   
   ],
+
+
   experimental: {
     defaults: {
       nuxtLink: {
@@ -22,6 +26,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   image: {
     
     quality: 30,

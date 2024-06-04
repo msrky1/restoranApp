@@ -40,7 +40,7 @@
     </div> -->
 
 
-  <div class="bg-[#BC945B]  w-screen rounded-lg fixed h-2/4 bottom-0">
+  <div class="bg-[#BC945B]  w-screen rounded-lg fixed h-3/6 bottom-0">
     <div class="fixed bottom-0 right-4  z-90">
       <div @click="backPage()">
         <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em"
@@ -62,8 +62,10 @@
       <h1 class="text-2xl font-bold text-white"> {{ menu.title }}</h1>
      
      
-      <div class="text-white quill-content">
-        <p  v-html="menu.body"></p>
+      <div class="text-white quill-content
+       text-center items-center"
+       v-html="menu.body">
+    
       </div>
       
       <h1 class="text-2xl   font-bold text-white"> {{ menu.price }}₺</h1>
