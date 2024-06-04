@@ -21,7 +21,7 @@
 
  
 
-        <UNotifications />
+        <UNotifications  :timeout="100000" />
 
     </NuxtLayout>
 

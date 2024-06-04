@@ -56,15 +56,14 @@ function addToast() {
 
 
 
-    store.data.forEach(element => {
-
+    store.data.forEach((element, index) => {
+    setTimeout(() => {
         toast.add({
-
-            title: "Tatlı Park ",
+            title: "Tatlı Park",
             description: element.body
-        })
-    });
- 
+        });
+    }, index * 500); 
+});
   
     
 }
