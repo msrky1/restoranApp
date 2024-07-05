@@ -1,21 +1,16 @@
 <template>
-
-    <div class=" mb-10 text-white overflow-hidden" ref="isShowPhoto">
+    <div v-if="category.hide" class="mb-10 text-white overflow-hidden" ref="isShowPhoto">
         <NuxtLink :to="'/category/' + category.id">  
-              <img :data-src="`${api}storage/category/${category.image}`" :alt="category.name">
-        
-            </NuxtLink>
-         
-        <NuxtLink :to="'/category/' + category.id">   <div class="text-center font-bold  text-[#BC945B]"> {{ category.name }}</div>
-          </NuxtLink>
-
-   
-
+            <img :data-src="`${api}storage/category/${category.image}`" :alt="category.name">
+        </NuxtLink>
+        <NuxtLink :to="'/category/' + category.id">   
+            <div class="text-center font-bold text-[#BC945B]">{{ category.name }}</div>
+        </NuxtLink>
     </div>
-    
 </template>
+
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const props = defineProps(['category'])
 const isShowPhoto = ref();
@@ -41,20 +36,19 @@ const options = {
 const observer = new IntersectionObserver(callback, options);
 
 onMounted(() => {
-    observer.observe(isShowPhoto.value);
-
+    if (isShowPhoto.value) {
+        observer.observe(isShowPhoto.value);
+    }
 })
-
 </script>
 
-
 <style scoped>
-img{
+img {
     opacity: 0;
     transform: translateY(100%) scale(0);
     transition: .5s all;
 }
-img.active{
+img.active {
     opacity: 1;
     transform: translateY(0%) scale(1);
 }

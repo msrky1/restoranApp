@@ -37,7 +37,7 @@
             </div>
             <div v-else class=" grid grid-cols-2  gap-1 ">
 
-                <Data v-for="(cat, key) in category" :key="key" :category="cat" />
+                <Data  v-for="(cat, key) in category" :key="key" :category="cat" />
 
                 <!-- <div class="justify-center items-center" v-for="m in category">
                     <div class="text-white cursor-pointer  rounded-b-lg  ">
