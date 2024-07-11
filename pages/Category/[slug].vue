@@ -16,22 +16,24 @@
                 </div>
             </div>
 
-            <div class=" grid grid-cols-2  gap-1">
+            <div v-if="CategoryMenu" class="grid  grid-cols-2 gap-2">
 
 
-                <div v-if="CategoryMenu"
-                    class="justify-center items-center flex max-sm:hover:border-2 transition-all ease-in rounded-lg"
-                    v-for="m in CategoryMenu">
-                    <div class="text-white cursor-pointer">
 
-                        <NuxtLink :to="'/menu/detail/' + m.id"> <NuxtImg   sizes="100vw sm:30vw md:400px"
+                <div class="" v-for="m in CategoryMenu">
 
-                                :src="api + 'storage/menu/' + m.image"/></NuxtLink>
+
+                    <div v-if="m.hide == 1">
+
+                        <NuxtLink :to="'/menu/detail/' + m.id">
+                            <NuxtImg sizes="100vw sm:30vw md:400px" :src="api + 'storage/menu/' + m.image" />
+                        </NuxtLink>
                         <div class=" text-[#BC945B] text-center ">
                             <h1 class="font-bold"> {{ m.title }}</h1>
                         </div>
                         <div class=" text-center text-[#BC945B] ">
                             <h2 class="font-bold">{{ m.price }}₺</h2>
+
                         </div>
                     </div>
 
@@ -46,8 +48,7 @@
 
             <div class="fixed cursor-pointer bottom-12 rounded-full  right-4  z-90">
                 <div @click="backPage()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em"
-                        viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 24 24">
                         <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                             <path stroke-dasharray="14" stroke-dashoffset="14" d="M19 12H5.5">
                                 <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="14;0" />
@@ -77,7 +78,7 @@ const route = useRoute()
 
 let url = api + 'api/category/detail/' + route.params.slug;
 
-const CategoryMenu = ref();
+const CategoryMenu = ref([]);
 const category = ref();
 const { data } = await useFetch(url)
 
