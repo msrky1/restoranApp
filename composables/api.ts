@@ -1,3 +1,3 @@
-// export const api  = "https://menu.tatliparkyaparsa.com/"
+export const api  = "https://menu.tatliparkyaparsa.com/"
 
-export const api  = "http://localhost:8000/"
+// export const api  = "http://localhost:8000/"
