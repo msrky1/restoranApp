@@ -56,7 +56,7 @@ onMounted(() => {
 
   setTimeout(() => {
     pages.value = true;
-  }, 3000);
+  }, 5000);
 })
 
 </script>
