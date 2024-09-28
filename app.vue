@@ -1,15 +1,11 @@
 <template>
 
 
-  <div class="h-screen items-center justify-center flex bg-[url('/genis.jpg')] 
-   bg-center bg-contain" v-if="pages === false">
-    <div>
-      <NuxtImg class="animate-pulse" width="300" src="/logo.png" />
-
-    </div>
-
-
+<div v-if="pages === false " class="h-screen flex items-end justify-center bg-[url('/genis.jpg')] bg-center bg-contain">
+  <div>
+    <NuxtImg class="mb-0" width="800" src="/chef.png" />
   </div>
+</div>
   <div v-else class="bg-[url('/genis.jpg')]  bg-center  bg-contain">
     <NuxtLoadingIndicator color="#BC945B" />
 
