@@ -1,23 +1,29 @@
 <template>
+ 
+  <div v-if="pages === false"
+    class="h-screen flex items-end justify-center bg-[url('/genis.jpg')]  min-[1024px]:hidden bg-center bg-contain">
+  
+    <div class="top-0 justify-center flex object-center absolute w-full 	 items-center  ">
+        <NuxtImg width="200" src="/logo-dikey.png" />
 
-
-<div v-if="pages === false " class="h-screen flex items-end justify-center bg-[url('/genis.jpg')] bg-center bg-contain">
-  <div>
-    <NuxtImg class="mb-0" width="800" src="/chef.png" />
+      </div>
+    <div>
+      
+      <NuxtImg class="mb-0" width="800" src="/chef.png" />
+    </div>
   </div>
-</div>
   <div v-else class="bg-[url('/genis.jpg')]  bg-center  bg-contain">
     <NuxtLoadingIndicator color="#BC945B" />
 
     <NuxtLayout>
-      
-     
-        <NuxtPage />
-    
 
- 
 
-        <UNotifications  :timeout="100000" />
+      <NuxtPage />
+
+
+
+
+      <UNotifications :timeout="100000" />
 
     </NuxtLayout>
 
