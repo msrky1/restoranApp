@@ -3,13 +3,13 @@
   <div v-if="pages === false"
     class="h-screen flex items-end justify-center bg-[url('/genis.jpg')]  min-[1024px]:hidden bg-center bg-contain">
   
-    <div class="-top-4  justify-center flex object-center absolute w-full 	 items-center  ">
+    <div class="-top-8  justify-center flex object-center absolute w-full 	 items-center  ">
         <NuxtImg width="200" src="/logo-dikey.png" />
 
       </div>
     <div>
       
-      <NuxtImg class="mb-0" width="800" src="/chef.png" />
+      <NuxtImg class="mb-0" width="400" src="/chef.png" />
     </div>
   </div>
   <div v-else class="bg-[url('/genis.jpg')]  bg-center  bg-contain">
