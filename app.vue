@@ -3,7 +3,7 @@
   <div v-if="pages === false"
     class="h-screen flex items-end justify-center bg-[url('/genis.jpg')]  min-[1024px]:hidden bg-center bg-contain">
   
-    <div class="-top-8  justify-center flex object-center absolute w-full 	 items-center  ">
+    <div class="-top-12  justify-center flex object-center absolute w-full 	 items-center  ">
         <NuxtImg width="200" src="/logo-dikey.png" />
 
       </div>
